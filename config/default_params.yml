@@ -5,7 +5,7 @@ application_name: 'awssummit-demo'
 source_bucket: source.demo1.awssummit.base2.services
 source_region: ap-southeast-2
 
-aws_profile: demo1
+#aws_profile: demo1
 
 #VPC/Network config
 

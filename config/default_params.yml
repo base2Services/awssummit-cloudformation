@@ -1,0 +1,75 @@
+#cfndsl defaiult params
+
+application_name: 'awssummit-demo'
+
+source_bucket: source.demo1.awssummit.base2.services
+source_region: ap-southeast-2
+
+aws_profile: demo1
+
+#VPC/Network config
+
+#AMIs
+appAMI:
+  ap-southeast-2:
+    ami: ami-b8cbe8db
+bastionAMI:
+  ap-southeast-2:
+    ami: ami-f2210191
+
+#AWS Availability Zones Idenifers
+availability_zones:
+  - 'A'
+  - 'B'
+  - 'C'
+
+azId:
+  A: 0
+  B: 1
+  C: 2
+
+vpc:
+  SubnetOctetA: "0"
+  SubnetOctetB: "1"
+  SubnetOctetC: "2"
+app:
+  SubnetOctetA: "3"
+  SubnetOctetB: "4"
+  SubnetOctetC: "5"
+
+#base2 Access
+opsAccess:
+  - 52.64.2.223/32
+devAccess:
+  - 52.64.2.223/32
+publicAccess:
+  - 0.0.0.0/0
+
+#Environment config
+#Account config
+AccountId:
+  112635491638:
+    KeyName: ciinabox
+    DnsDomain: awssummit.base2.services
+Mappings:
+  EnvironmentType:
+    production:
+      AppInstanceType: t2.small
+      BastionInstanceType: t2.micro
+      AppHealthCheckType: ELB
+      StackMask: 16
+      SubnetMask: 24
+      NetworkPrefix: 10
+      AppMinSize: 2
+      AppMaxSize: 6
+      MinInstancesInService: 1
+    dev:
+      AppInstanceType: t2.small
+      BastionInstanceType: t2.micro
+      AppHealthCheckType: EC2
+      StackMask: 16
+      SubnetMask: 24
+      NetworkPrefix: 10
+      AppMinSize: 2
+      AppMaxSize: 6
+      MinInstancesInService: 0

@@ -1,0 +1,13 @@
+#Codedeploy config
+codedeploy:
+  applications:
+    -
+      name: awssummit-demo
+      deployment_groups:
+        -
+          name: app
+          deployment_config_name: CodeDeployDefault.OneAtATime
+          type: tag
+          tag_key: Name
+          tag_value: app-xx
+          tag_value_EnvironmentName_prefix: true

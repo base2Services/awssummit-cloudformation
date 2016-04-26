@@ -2,7 +2,7 @@
 codedeploy:
   applications:
     -
-      name: awssummit-demo
+      name: awssummitdemo
       deployment_groups:
         -
           name: app
